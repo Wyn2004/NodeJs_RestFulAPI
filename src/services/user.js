@@ -1,4 +1,3 @@
-import { raw } from "express";
 import db from "../models";
 
 export const getMyProfile = (id) =>
@@ -9,7 +8,7 @@ export const getMyProfile = (id) =>
         raw: true,
         nest: true,
         attributes: {
-          exclude: ["password", "role_code"],
+          exclude: ["password", "role_code", "refresh_token"],
         },
         // Lấy data của bảng có khoá ngoại
         include: [
@@ -37,7 +36,7 @@ export const getAllUser = () =>
         raw: true,
         nest: true,
         attributes: {
-          exclude: ["password", "role_code"],
+          exclude: ["password", "role_code", "refresh_token"],
         },
         include: [
           {

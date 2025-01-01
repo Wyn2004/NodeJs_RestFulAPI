@@ -9,10 +9,10 @@ export const badRequestError = (mess, res) => {
   });
 };
 
-export const unAuthorizedError = (mess, res) => {
+export const unAuthorizedError = (mess, res, isChecked) => {
   const error = createError.Unauthorized(mess);
   return res.status(error.status).json({
-    err: -1,
+    err: isChecked ? 1 : -1,
     mess: error.message,
   });
 };

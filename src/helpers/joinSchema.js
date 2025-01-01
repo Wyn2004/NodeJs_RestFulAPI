@@ -7,6 +7,10 @@ export const email = joi
 
 export const password = joi.string().min(3).required();
 
+export const role_code = joi.string().alphanum();
+
+export const refresh_token = joi.string().required();
+
 export const title = joi.string().required();
 
 export const description = joi.string().required();
