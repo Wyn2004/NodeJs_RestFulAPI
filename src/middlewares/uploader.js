@@ -9,6 +9,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_SECRET,
 });
 
+// chinhr param laf folder
 const storage = new CloudinaryStorage({
   cloudinary,
   allowedFormats: ["jpg", "png"],

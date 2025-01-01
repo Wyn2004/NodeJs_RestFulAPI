@@ -12,10 +12,16 @@ route.use(verifyAccessToken);
 route.use(verifyModeratorAndAdmin);
 // cài middleware uploadCloud.single("image") vì server sẽ upload ảnh trước khi tạo sản phẩm
 // single là up đơn ảnh với key ảnh sẽ là image
-route.use(
+route.post(
   "/create",
   uploadCloud.single("image"),
   controller.bookController.createBook
 );
+route.put(
+  "/update/:bid",
+  uploadCloud.single("image"),
+  controller.bookController.updateBook
+);
+route.delete("/delete/:bid", controller.bookController.deleteBook);
 
 module.exports = route;
